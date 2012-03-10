@@ -1,0 +1,3 @@
+eventmonitorlog: /var/log/sonic/somefile.log
+logfile: /var/log/sonic/sonicmq-webping.log
+loglevel: Logger::DEBUG

@@ -1,0 +1,52 @@
+/* line 3, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+a {
+  color: #418dba;
+}
+
+/* line 6, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+h3 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+
+/* line 11, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.alerts tr.odd {
+  background-color: #f4f4f4;
+}
+/* line 13, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.alerts tr.even {
+  background-color: #e2e2e2;
+}
+/* line 15, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.alerts th {
+  border-bottom: 1px solid #666666;
+  background: #c3c3c3;
+}
+/* line 18, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.alerts td, table.alerts th {
+  vertical-align: top;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* line 24, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.status_good tr {
+  background-color: lime;
+}
+/* line 26, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.status_good td, table.status_good th {
+  vertical-align: top;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* line 32, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.status_bad tr {
+  background-color: red;
+}
+/* line 34, /Users/pattersonj/study/ruby/scripts/sonic-webping/views/stylesheets/screen.sass */
+table.status_bad td, table.status_bad th {
+  vertical-align: top;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
