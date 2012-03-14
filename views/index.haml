@@ -55,7 +55,6 @@
           %th Date 
           %th Type
           %th Source
-          %th Container
           %th Broker
           %th User
           %th Client IP 
@@ -68,7 +67,6 @@
               %td= Time.at(Array(alert['timestamp']).sort.to_s.to_i)
               %td= alert['type']
               %td= alert['source']
-              %td= alert['container']          
               %td= alert['broker']
               %td= alert['user']
               %td= alert['client']
