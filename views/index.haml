@@ -38,7 +38,7 @@
         - unless @store_crit == nil
           - @store_crit.each do |alert|
             %tr{:class => cycle}
-              %td= Time.at(Array(alert['timestamp']).sort.to_s.to_i)
+              %td= Time.at(alert['timestamp'].to_i)
               %td= alert['type']
               %td= alert['source']
               %td= alert['container']          
@@ -64,7 +64,7 @@
         - unless @store_info == nil
           - @store_info.each do |alert|
             %tr{:class => cycle}
-              %td= Time.at(Array(alert['timestamp']).sort.to_s.to_i)
+              %td= Time.at(alert['timestamp'].to_i)
               %td= alert['type']
               %td= alert['source']
               %td= alert['broker']

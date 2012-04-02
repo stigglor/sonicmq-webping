@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'sinatra'
 require 'redis'
 require 'json'
 require 'haml'
@@ -40,12 +38,12 @@ helpers do
       return nil
     end
   end
-end 
-  
+end
+
 before do
   @redis = Redis.new
-  @store_crit = return_entries('critical')
-  @store_info = return_entries('info')
+  @store_crit = return_entries('critical').sort_by { |k| k['timestamp'] }.reverse
+  @store_info = return_entries('info').sort_by { |k| k['timestamp'] }.reverse
 end
 
 get '/stylesheets/:name.css' do

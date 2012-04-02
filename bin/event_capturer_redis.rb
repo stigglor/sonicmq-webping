@@ -8,7 +8,6 @@ require 'xmlsimple'
 require 'file-tail'
 require 'yaml'
 require 'digest'
-require 'fiber'
 
 class Hash
   # pass single or array of keys, which will be removed, returning the remaining hash
@@ -114,19 +113,21 @@ class Alerting
   
   # Method to cleanup old info alerts
   def info_cleaner
-    fiber = Fiber.new do
+    Thread.new {
       while true
+        cleaned = 0
         @store_info.return_all.each do |k,v|
           x = JSON.parse(v)
           alert_time = x['Timestamp'].to_i
           unless alert_time > Time.now.to_i-86400 # Is alert older than 24 hours?
             @store_info.delete(k)
+            cleaned = cleaned + 1
           end
         end
+        @log.info("Removed #{cleaned} old info alerts")
         sleep 3600 # Sleep for an hour until we loop
       end
-    end
-    fiber.resume
+    }
   end
    
   # Tail the EventMonitor log file for events
